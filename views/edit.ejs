@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+Edit quote and user name
+  <form action="/update_quote/<%= quote._id%>" method="POST">
+    <input type="text" placeholder="name" name="name" value="<%= quote.name%>">
+    <input type="text" placeholder="quote" name="quote" value="<%= quote.quote%>">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

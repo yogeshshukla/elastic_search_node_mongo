@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY FIRST CRUD APP IN APP</title>
+</head>
+<body>
+  List of quotes and users name
+  <form action="/search" method="get">
+    <input type="text" placeholder="Enter name to search" name="name">
+    <button type="submit">Submit</button>
+  </form>
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><b><%= quotes[i].name %></b></span>
+      <span><%= quotes[i].quote %></span>
+      <a href="/view_quote/<%= quotes[i]._id%>">View</a>
+      <a href="/edit_quote/<%= quotes[i]._id%>">Edit</a>
+      <a href="/delete_quote/<%= quotes[i]._id%>">Delete</a>
+    </li>
+  <% } %>
+  </ul>
+<%- pagination.render() %>
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <input type="hidden" name="next_page" value="<%= next_page%>"/>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

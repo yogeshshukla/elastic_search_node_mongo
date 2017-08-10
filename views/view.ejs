@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+View quote and user name
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name" value="<%= quote.name%>">
+    <input type="text" placeholder="quote" name="quote" value="<%= quote.quote%>">
+    <a href="/">Back</a>
+  </form>
+</body>
+</html>
